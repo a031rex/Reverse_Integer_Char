@@ -13,10 +13,28 @@ int reverse(int value)
 	return result + value;
 }
 
+void reverse2(char *word)
+{
+	char temp='\0';
+	int length = strlen(word);
+	for(int i=0,j=length-1;i<j;i++,j--)
+	{
+		temp  = word[i];
+		word[i] = word[j];
+		word[j] = temp;
+	}
+}
+
 int main()
 {
 	cout<<"反轉int: 12345 -> 54321"<<endl;
 	cout<<reverse(12345)<<endl;
+	
+	cout<<"反轉word: love -> evol"<<endl;
+	char word[] = {"love"};
+	reverse2(word);
+	cout<<word<<endl;
+	
 	system("pause");
 	return 0;
 }
