@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int reverse(int value)
+{
+	int remainder=0, result=0;
+	while(value>=10)
+	{
+		result += (value % 10);
+		result *=10;
+		value /=10;
+	}
+	return result + value;
+}
+
+int main()
+{
+	cout<<"反轉int: 12345 -> 54321"<<endl;
+	cout<<reverse(12345)<<endl;
+	system("pause");
+	return 0;
+}
